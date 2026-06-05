@@ -49,7 +49,7 @@ type PrPayload = {
   };
 };
 
-const ISSUE_REF = /(?:close[sd]?|fixe[sd]?|resolve[sd]?)\s+#(\d+)/gi;
+const ISSUE_REF = /(?:close[sd]?|fix(?:e[sd]?)?|resolve[sd]?)\s+#(\d+)/gi;
 
 export function extractIssueNumbers(text: string | null | undefined): number[] {
   if (!text) return [];

@@ -28,6 +28,10 @@ describe('extractIssueNumbers', () => {
     expect(extractIssueNumbers(undefined)).toEqual([]);
   });
 
+  it('finds "fix #7" (no trailing e)', () => {
+    expect(extractIssueNumbers('fix #7')).toEqual([7]);
+  });
+
   it('case-insensitive', () => {
     expect(extractIssueNumbers('CLOSES #99')).toEqual([99]);
     expect(extractIssueNumbers('Fixed #100')).toEqual([100]);
